@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "kind": "sdkwork.app.config",
+  "schemaVersion": 3,
+  "kind": "sdkwork.app",
   "app": {
     "name": "sdkwork-xiangqi",
     "displayName": "SDKWork Xiangqi",
@@ -13,30 +13,6 @@
     "appType": "APP_HTML",
     "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-xiangqi"
   },
-  "runtime": {
-    "apiBaseUrl": "http://localhost:8098",
-    "appApiPrefix": "/app/v3/api",
-    "backendApiPrefix": "/backend/v3/api",
-    "supportedDeploymentProfiles": [
-      "standalone",
-      "cloud"
-    ],
-    "defaultDeploymentProfile": "standalone"
-  },
-  "sdk": {
-    "appApiAuthority": "sdkwork-xiangqi-app-api",
-    "backendApiAuthority": "sdkwork-xiangqi-backend-api",
-    "appSdkFamily": "sdkwork-xiangqi-app-sdk",
-    "backendSdkFamily": "sdkwork-xiangqi-backend-sdk"
-  },
-  "sdkDependencies": [],
-  "dependencyApiExports": [],
-  "dependencyApiSurfaces": [],
-  "features": {
-    "match": true,
-    "rooms": true,
-    "leaderboards": true
-  },
   "backend": {
     "profileKey": "backend-root-admin",
     "accessTokenPermissionScope": [
@@ -47,5 +23,193 @@
     ],
     "tenantId": "100001",
     "organizationId": "0"
+  },
+  "runtime": {
+    "apiBaseUrl": "http://localhost:8098",
+    "appApiPrefix": "/app/v3/api",
+    "backendApiPrefix": "/backend/v3/api",
+    "supportedDeploymentProfiles": [
+      "standalone",
+      "cloud"
+    ],
+    "defaultDeploymentProfile": "standalone",
+    "family": "server",
+    "framework": "rust-axum"
+  },
+  "media": {
+    "icons": {
+      "primary": {
+        "id": "sdkwork-xiangqi-primary-icon",
+        "type": "ICON",
+        "purpose": "PRIMARY",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/assets/icon-1024.png",
+        "platform": "APP",
+        "locale": "en-US",
+        "width": 1024,
+        "height": 1024,
+        "format": "PNG",
+        "fileSizeBytes": 524288,
+        "alphaChannel": false,
+        "sortOrder": 0,
+        "enabled": true,
+        "metadata": {
+          "generatedPlaceholder": true
+        }
+      },
+      "platform": [],
+      "metadata": {
+        "generatedPlaceholder": true
+      }
+    },
+    "screenshots": [
+      {
+        "id": "sdkwork-xiangqi-web-screenshot",
+        "type": "SCREENSHOT",
+        "purpose": "CATALOG_SCREENSHOT",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/media/web-screenshot.png",
+        "platform": "WEB",
+        "locale": "en-US",
+        "deviceClass": "BROWSER",
+        "displayType": "WEB_DESKTOP",
+        "width": 1920,
+        "height": 1080,
+        "format": "PNG",
+        "fileSizeBytes": 1048576,
+        "alphaChannel": false,
+        "caption": "SDKWork Xiangqi product screenshot.",
+        "sortOrder": 0,
+        "enabled": true,
+        "metadata": {
+          "generatedPlaceholder": true,
+          "altText": "SDKWork Xiangqi app screenshot."
+        }
+      }
+    ],
+    "previews": [
+      {
+        "id": "sdkwork-xiangqi-catalog-preview",
+        "type": "PREVIEW_IMAGE",
+        "purpose": "CATALOG_PREVIEW",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/media/preview-cover.png",
+        "platform": "WEB",
+        "locale": "en-US",
+        "width": 1600,
+        "height": 900,
+        "format": "PNG",
+        "fileSizeBytes": 786432,
+        "alphaChannel": false,
+        "caption": "SDKWork Xiangqi preview.",
+        "sortOrder": 0,
+        "enabled": true,
+        "metadata": {
+          "generatedPlaceholder": true,
+          "altText": "SDKWork Xiangqi preview cover."
+        }
+      }
+    ],
+    "metadata": {
+      "assetVersion": "0.1.0",
+      "defaultLocale": "en-US"
+    }
+  },
+  "publish": {
+    "status": "ACTIVE",
+    "platforms": [
+      "WEB"
+    ],
+    "installPlatforms": [
+      "WEB"
+    ],
+    "defaultPackageId": "linux-x64-standalone-server-tar-gz",
+    "installSkill": {
+      "name": "sdkwork-skills-app"
+    },
+    "stores": [],
+    "storeUrl": "https://sdkwork.com/apps/sdkwork-xiangqi"
+  },
+  "artifacts": {
+    "installConfig": {
+      "defaultPackageId": "linux-x64-standalone-server-tar-gz",
+      "installCommand": "sdkwork install sdkwork-xiangqi",
+      "launchCommand": "sdkwork open sdkwork-xiangqi",
+      "uninstallCommand": "sdkwork uninstall sdkwork-xiangqi",
+      "packages": [
+        {
+          "id": "linux-x64-standalone-server-tar-gz",
+          "name": "Sdkwork Xiangqi standalone server archive",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "TAR_GZ",
+          "platform": "API",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/STABLE/0.1.0/linux-x64-standalone-server-tar-gz-0.1.0.tar.gz",
+          "architecture": "x64",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "2178123df374411c5ea8ed4afe1d164c1037b4dd93aa1293daaf3aedf58de0b4",
+          "deploymentProfile": "standalone",
+          "runtimeTarget": "server",
+          "profileBinding": "fixed",
+          "enabled": true,
+          "metadata": {
+            "releaseBuildDeferred": false
+          }
+        },
+        {
+          "id": "linux-x64-cloud-server-tar-gz",
+          "name": "Sdkwork Xiangqi cloud server archive",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "TAR_GZ",
+          "platform": "API",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
+          "architecture": "x64",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "bb3c759bf70b9081c31cf97669dcc479886b564fbef6469ac9d5ff31904102c3",
+          "deploymentProfile": "cloud",
+          "runtimeTarget": "server",
+          "profileBinding": "fixed",
+          "enabled": true,
+          "metadata": {
+            "releaseBuildDeferred": false
+          }
+        }
+      ]
+    }
+  },
+  "release": {
+    "currentVersion": "0.1.0",
+    "defaultChannel": "STABLE",
+    "latest": {
+      "STABLE": "0.1.0"
+    },
+    "notes": [
+      {
+        "version": "0.1.0",
+        "releaseChannel": "STABLE",
+        "title": "SDKWork Xiangqi 0.1.0",
+        "summary": "SDKWork Xiangqi initialized standard release.",
+        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Xiangqi.",
+        "highlights": [
+          "SDKWork App Standard v3 configuration initialized",
+          "platform_app projection metadata standardized",
+          "Download package matrix normalized"
+        ],
+        "packageIds": [
+          "linux-x64-standalone-server-tar-gz",
+          "linux-x64-cloud-server-tar-gz"
+        ],
+        "publishedAt": "2026-05-07T00:00:00Z",
+        "current": true,
+        "forceUpdate": false,
+        "minSupportedVersion": "0.1.0",
+        "metadata": {}
+      }
+    ]
+  },
+  "security": {
+    "checksumRequired": false,
+    "signatureRequired": false,
+    "sbomRequired": false
+  },
+  "metadata": {
+    "deploymentConfig": "etc/sdkwork.deployment.config.json",
+    "standardOwner": "sdkwork-platform"
   }
 }

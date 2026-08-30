@@ -17,7 +17,7 @@
   "paths": {
     "/app/v3/api/xiangqi/matches": {
       "get": {
-        "operationId": "xiangqi.match.list",
+        "operationId": "match.list",
         "tags": [
           "xiangqi"
         ],
@@ -61,7 +61,7 @@
     },
     "/app/v3/api/xiangqi/matches/{matchId}": {
       "get": {
-        "operationId": "xiangqi.match.retrieve",
+        "operationId": "match.retrieve",
         "tags": [
           "xiangqi"
         ],
