@@ -1,0 +1,13 @@
+environment = "demo"
+
+[http]
+
+[[http.server]]
+listen = ["80"]
+serverName = ["xiangqi-demo.sdkwork.com", "xiangqi-demo.birdcoder.com", "xiangqi-demo.dtupay.com", "xiangqi-demo.noaper.com", "xiangqi-demo.sdkwork.cn", "xiangqi-demo.birdcoder.cn", "xiangqi-demo.dtupay.cn", "xiangqi-demo.noaper.cn", "xiangqi-demo.skubc.com", "xiangqi-demo.skubc.cn", "xiangqi-demo.zowalk.com", "xiangqi-demo.zowalk.cn", "xiangqi-demo.offer86.com", "xiangqi-demo.offer86.cn", "xiangqi-demo.86offer.com", "xiangqi-demo.86offer.cn"]
+include = ["snippets/adaptive-web.named-locations.conf", "snippets/gateway-api-locations.nonproduction.conf"]
+
+[[http.server.location]]
+match = "/"
+include = ["snippets/adaptive-web.dispatch.conf"]
+
