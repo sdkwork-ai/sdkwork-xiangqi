@@ -5,6 +5,7 @@ import {
   type SdkworkAppClient,
   type SdkworkAppConfig,
 } from '@sdkwork/xiangqi-app-sdk';
+import { resolveBaseUrl } from '@sdkwork/sdk-common';
 
 const DEFAULT_DEV_PRINCIPAL =
   'tenant_id=demo-tenant;user_id=user-1;session_id=session-1;app_id=XIANGQI;auth_level=password';
@@ -16,7 +17,7 @@ export function resolveXIANGQIAppSdkConfig(): SdkworkAppConfig {
   const baseUrl =
     env.VITE_sdkwork_xiangqi_APP_API_BASE_URL ??
     env.VITE_xiangqi_API_BASE_URL ??
-    (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:8098');
+    resolveBaseUrl().url;
   const principal =
     env.VITE_xiangqi_DEV_PRINCIPAL ?? env.SDKWORK_ACCESS_TOKEN ?? DEFAULT_DEV_PRINCIPAL;
 
