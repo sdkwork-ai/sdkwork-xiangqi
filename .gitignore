@@ -56,4 +56,3 @@ Thumbs.db
 
 # Generated runtime files (do not track)
 **/public/runtime-env.json
-/bin/
