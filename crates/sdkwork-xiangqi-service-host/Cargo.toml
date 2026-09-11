@@ -1,10 +1,14 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-xiangqi-service-host"
 edition.workspace = true
 version.workspace = true
 license = "Apache-2.0"
 description = "In-process Xiangqi service container for gateway assembly."
 
+
+[lints]
+workspace = true
 [dependencies]
 sdkwork-database-sqlx.workspace = true
 sdkwork_xiangqi_database_host.workspace = true
