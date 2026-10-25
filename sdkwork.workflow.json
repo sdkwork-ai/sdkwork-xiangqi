@@ -6,7 +6,7 @@
     "name": "SDKWork Xiangqi",
     "repository": "sdkwork-ai/sdkwork-xiangqi",
     "sourcePath": ".",
-    "configPath": "sdkwork.app.config.json"
+    "configPath": "agent.app.config.json"
   },
   "release": {
     "artifactPrefix": "sdkwork-xiangqi",

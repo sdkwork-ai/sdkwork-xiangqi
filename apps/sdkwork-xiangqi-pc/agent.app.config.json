@@ -1,48 +1,58 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
-    "name": "sdkwork-xiangqi",
+    "key": "sdkwork-xiangqi-pc",
+    "name": "SDKWork Xiangqi PC",
     "displayName": "SDKWork Xiangqi",
-    "version": "0.1.0",
-    "description": "SDKWork Chinese chess (xiangqi) platform for matches, rooms, and leaderboards",
-    "owner": "sdkwork-xiangqi",
-    "domain": "game",
-    "capability": "match",
-    "key": "sdkwork-xiangqi",
+    "description": "PC browser application for SDKWork Xiangqi matches, rooms, and leaderboards.",
+    "vendor": "SDKWork",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-xiangqi-pc",
     "appType": "APP_HTML",
-    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-xiangqi"
+    "versionSource": "package.json",
+    "identifiers": {
+      "packageName": null,
+      "bundleId": null,
+      "desktopAppId": null,
+      "containerImage": null
+    }
   },
   "backend": {
     "profileKey": "backend-root-admin",
-    "accessTokenPermissionScope": [
-      "iam.users.read",
-      "iam.organizations.read",
-      "iam.roles.read",
-      "iam.permissions.read"
-    ],
+    "ownerMode": "tenant",
+    "grantMode": "current",
+    "platform": "WEB",
+    "appId": null,
     "tenantId": "100001",
     "organizationId": "0"
   },
   "runtime": {
-    "apiBaseUrl": "http://localhost:8098",
-    "appApiPrefix": "/app/v3/api",
-    "backendApiPrefix": "/backend/v3/api",
+    "family": "server",
+    "framework": "react",
+    "runtimes": [
+      "BROWSER"
+    ],
+    "deliveryModes": [
+      "DIRECT_DOWNLOAD"
+    ],
+    "defaultPlatform": "WEB",
+    "defaultArchitecture": "x64",
     "supportedDeploymentProfiles": [
       "standalone",
       "cloud"
     ],
     "defaultDeploymentProfile": "standalone",
-    "family": "server",
-    "framework": "rust-axum"
+    "apiBaseUrl": "http://localhost:8098",
+    "appApiPrefix": "/app/v3/api",
+    "backendApiPrefix": "/backend/v3/api"
   },
   "media": {
     "icons": {
       "primary": {
-        "id": "sdkwork-xiangqi-primary-icon",
+        "id": "sdkwork-xiangqi-pc-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi-pc/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -63,10 +73,10 @@
     },
     "screenshots": [
       {
-        "id": "sdkwork-xiangqi-web-screenshot",
+        "id": "sdkwork-xiangqi-pc-web-screenshot",
         "type": "SCREENSHOT",
         "purpose": "CATALOG_SCREENSHOT",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/media/web-screenshot.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi-pc/media/web-screenshot.png",
         "platform": "WEB",
         "locale": "en-US",
         "deviceClass": "BROWSER",
@@ -87,10 +97,10 @@
     ],
     "previews": [
       {
-        "id": "sdkwork-xiangqi-catalog-preview",
+        "id": "sdkwork-xiangqi-pc-catalog-preview",
         "type": "PREVIEW_IMAGE",
         "purpose": "CATALOG_PREVIEW",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/media/preview-cover.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi-pc/media/preview-cover.png",
         "platform": "WEB",
         "locale": "en-US",
         "width": 1600,
@@ -120,57 +130,72 @@
     "installPlatforms": [
       "WEB"
     ],
-    "defaultPackageId": "linux-x64-standalone-server-tar-gz",
+    "defaultPackageId": "web-browser-standalone-zip",
+    "storeUrl": "https://sdkwork.com/apps/sdkwork-xiangqi-pc",
+    "stores": [],
+    "config": {
+      "workspaceRoot": ".",
+      "framework": "react"
+    },
     "installSkill": {
       "name": "sdkwork-skills-app"
+    }
+  },
+  "environments": {
+    "development": {
+      "accessUrl": "http://localhost:3000",
+      "deployUrl": "http://localhost:3000",
+      "deployEnv": "dev"
     },
-    "stores": [],
-    "storeUrl": "https://sdkwork.com/apps/sdkwork-xiangqi"
+    "production": {
+      "accessUrl": "https://XIANGQI.sdkwork.com",
+      "deployUrl": "https://XIANGQI.sdkwork.com",
+      "deployEnv": "production"
+    }
   },
   "artifacts": {
     "installConfig": {
-      "defaultPackageId": "linux-x64-standalone-server-tar-gz",
-      "installCommand": "sdkwork install sdkwork-xiangqi",
-      "launchCommand": "sdkwork open sdkwork-xiangqi",
-      "uninstallCommand": "sdkwork uninstall sdkwork-xiangqi",
+      "defaultPackageId": "web-browser-standalone-zip",
+      "installCommand": "sdkwork install sdkwork-xiangqi-pc",
+      "launchCommand": "sdkwork open sdkwork-xiangqi-pc",
+      "uninstallCommand": "sdkwork uninstall sdkwork-xiangqi-pc",
       "packages": [
         {
-          "id": "linux-x64-standalone-server-tar-gz",
-          "name": "Sdkwork Xiangqi standalone server archive",
+          "id": "web-browser-standalone-zip",
+          "name": "SDKWork Xiangqi PC Web",
           "sourceType": "BINARY_URL",
-          "packageFormat": "TAR_GZ",
-          "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/STABLE/0.1.0/linux-x64-standalone-server-tar-gz-0.1.0.tar.gz",
+          "packageFormat": "ZIP",
+          "platform": "WEB",
           "architecture": "x64",
-          "checksumAlgorithm": "SHA-256",
-          "checksum": "2178123df374411c5ea8ed4afe1d164c1037b4dd93aa1293daaf3aedf58de0b4",
           "deploymentProfile": "standalone",
-          "runtimeTarget": "server",
-          "profileBinding": "fixed",
+          "runtimeTarget": "browser",
           "enabled": true,
-          "metadata": {
-            "releaseBuildDeferred": false
-          }
+          "profileBinding": "fixed",
+          "targetPlatform": "web",
+          "clientArchitecture": "pc-web",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi-pc/STABLE/0.1.0/web-browser-standalone-zip-0.1.0.zip"
         },
         {
           "id": "linux-x64-cloud-server-tar-gz",
-          "name": "Sdkwork Xiangqi cloud server archive",
+          "name": "Sdkwork Xiangqi Pc cloud server archive",
           "sourceType": "BINARY_URL",
           "packageFormat": "TAR_GZ",
           "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-xiangqi-pc/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
           "architecture": "x64",
           "checksumAlgorithm": "SHA-256",
-          "checksum": "bb3c759bf70b9081c31cf97669dcc479886b564fbef6469ac9d5ff31904102c3",
+          "checksum": "698d53a9a0f918eca5408dddc32b420b81b1a3c54ac21e89e13d27e2dcca6fb5",
           "deploymentProfile": "cloud",
           "runtimeTarget": "server",
           "profileBinding": "fixed",
           "enabled": true,
-          "metadata": {
-            "releaseBuildDeferred": false
-          }
+          "metadata": {}
         }
-      ]
+      ],
+      "metadata": {
+        "workspaceRoot": ".",
+        "packageManager": "pnpm"
+      }
     }
   },
   "release": {
@@ -192,7 +217,7 @@
           "Download package matrix normalized"
         ],
         "packageIds": [
-          "linux-x64-standalone-server-tar-gz",
+          "web-browser-standalone-zip",
           "linux-x64-cloud-server-tar-gz"
         ],
         "publishedAt": "2026-05-07T00:00:00Z",
@@ -208,8 +233,19 @@
     "signatureRequired": false,
     "sbomRequired": false
   },
+  "devApp": {
+    "build": {
+      "targets": [
+        "browser"
+      ]
+    },
+    "sourceRoot": "."
+  },
   "metadata": {
-    "deploymentConfig": "etc/sdkwork.deployment.config.json",
+    "domain": "game",
+    "capability": "match",
+    "owner": "sdkwork-xiangqi",
+    "applicationRoot": "../..",
     "standardOwner": "sdkwork-platform"
   }
 }
