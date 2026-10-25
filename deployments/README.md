@@ -21,5 +21,5 @@ Deployment descriptors and packaging handoff for `sdkwork-xiangqi`.
 
 ## Packaging
 
-- GitHub workflow: `sdkwork.workflow.json` + `.github/workflows/package.yml`
+- GitHub workflow: `agent.workflow.json` + `.github/workflows/package.yml`
 - Release artifact: `target/release/sdkwork-api-xiangqi-standalone-gateway`
