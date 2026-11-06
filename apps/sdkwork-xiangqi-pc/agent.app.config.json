@@ -22,9 +22,12 @@
     "ownerMode": "tenant",
     "grantMode": "current",
     "platform": "WEB",
-    "appId": null,
+    "appId": "sdkwork-xiangqi-pc",
     "tenantId": "100001",
-    "organizationId": "0"
+    "organizationId": "0",
+    "accessTokenPermissionScope": [
+      "iam:self"
+    ]
   },
   "runtime": {
     "family": "server",
